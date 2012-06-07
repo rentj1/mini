@@ -121,8 +121,8 @@ var mini = (function(){
             do {
                 
                 matches = !nodeName || nodeName === '*' || nodeName === parent.nodeName.toLowerCase();
-                matches = matches || (!id || parent.id === id);
-                matches = matches || (!className || RegExp('(^|\\s)' + className + '(\\s|$)').test(parent.className));
+                matches = matches && (!id || parent.id === id);
+                matches = matches && (!className || RegExp('(^|\\s)' + className + '(\\s|$)').test(parent.className));
                 
                 if (direct || matches) { break; }
                 
